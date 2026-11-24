@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lodam Lee — Player File 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=JetBrains+Mono:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:794px;height:1123px;background:#0a1220;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:'Inter Tight',sans-serif;color:#fff;letter-spacing:-.011em;}
+  .sheet{width:794px;height:1123px;padding:40px;position:relative;overflow:hidden;
+    background:radial-gradient(80% 34% at 76% 4%,rgba(47,107,240,.22),transparent 62%),#0a1220}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* top bar */
+  .bar{display:flex;align-items:center;gap:10px;height:54px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .badge{width:24px;height:24px;border-radius:6px;background:#2f6bf0;display:grid;place-items:center;
+    font-family:'JetBrains Mono',monospace;font-weight:700;font-size:11px}
+  .bar b{font-size:13.5px;font-weight:800;letter-spacing:-.01em}
+  .bar .sub{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.5)}
+  .bar .right{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.16em;
+    text-transform:uppercase;color:rgba(255,255,255,.5)}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 232px;gap:26px;padding:26px 0 22px;align-items:start}
+  .eye{font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:rgba(255,255,255,.5);display:flex;align-items:center;gap:8px}
+  .eye i{width:18px;height:1px;background:#2f6bf0;display:block}
+  h1{font-size:74px;font-weight:800;line-height:.86;letter-spacing:-.05em;text-transform:uppercase;margin-top:10px}
+  h1 span{font-family:'Great Vibes',cursive;font-weight:400;font-size:1.02em;line-height:.95;display:block;
+    text-transform:none;letter-spacing:0;margin-top:2px}
+  .lede{font-size:10.5px;line-height:1.6;color:rgba(255,255,255,.62);margin-top:14px;max-width:330px}
+  .lede b{color:#fff;font-weight:600}
+  .cta{display:inline-flex;margin-top:12px;background:#2f6bf0;border-radius:999px;padding:8px 14px;
+    font-family:'JetBrains Mono',monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+
+  /* ccm card */
+  .ccm{background:linear-gradient(165deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:13px 14px}
+  .ccm .top{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:6.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+  .ccm .top b{color:#fff;font-weight:700}
+  .mark{width:44px;height:44px;display:block;object-fit:contain;margin:10px 0 9px}
+  .ccm h3{font-size:12.5px;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+  .ccm p{font-size:8px;line-height:1.55;color:rgba(255,255,255,.58);margin-top:5px}
+  .ccm .nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.14);
+    margin-top:10px;padding-top:9px;gap:6px}
+  .ccm .nums b{display:block;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:-.03em}
+  .ccm .nums span{display:block;font-family:'JetBrains Mono',monospace;font-size:5.8px;letter-spacing:.1em;
+    text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:3px}
+
+  /* meta */
+  .meta{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(255,255,255,.14);
+    border-bottom:1px solid rgba(255,255,255,.14);padding:11px 0}
+  .meta>div{padding-left:12px;border-left:1px solid rgba(255,255,255,.1)}
+  .meta>div:first-child{padding-left:0;border-left:0}
+  .meta span{display:block;font-family:'JetBrains Mono',monospace;font-size:6.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(255,255,255,.45)}
+  .meta b{display:block;font-size:11.5px;font-weight:700;margin-top:4px}
+
+  /* stat band */
+  .band{display:grid;grid-template-columns:repeat(4,1fr);background:#f7f8fa;color:#0a1220;border-radius:10px;
+    padding:13px 18px;margin-top:18px}
+  .band>div{padding-left:16px;border-left:1px solid rgba(10,18,32,.1)}
+  .band>div:first-child{padding-left:0;border-left:0}
+  .band b{display:block;font-size:22px;font-weight:800;letter-spacing:-.035em;line-height:1}
+  .band span{display:block;font-family:'JetBrains Mono',monospace;font-size:6.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:rgba(10,18,32,.56);margin-top:5px}
+
+  /* two columns */
+  .cols{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;margin-top:20px}
+  h2{font-size:14px;font-weight:700;letter-spacing:-.02em;border-top:1px solid rgba(255,255,255,.14);
+    padding-top:9px;margin-bottom:9px;display:flex;align-items:baseline;justify-content:space-between}
+  h2 em{font-style:italic;font-weight:700}
+  h2 .mono{font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);font-style:normal}
+  p.body{font-size:9.2px;line-height:1.62;color:rgba(255,255,255,.62)}
+  p.body b{color:#fff;font-weight:600}
+  p.body+p.body{margin-top:6px}
+
+  /* honors / career lists */
+  ul{list-style:none}
+  li{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:6px 0;border-top:1px solid rgba(255,255,255,.07);
+    font-size:8.4px;line-height:1.45;color:rgba(255,255,255,.72)}
+  li:first-child{border-top:1px solid rgba(255,255,255,.14)}
+  li .y{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.06em;color:#5f8bff;padding-top:1px}
+  li b{color:#fff;font-weight:600}
+  li i{font-style:normal;color:rgba(255,255,255,.42);font-family:'JetBrains Mono',monospace;font-size:6.6px;
+    letter-spacing:.1em;text-transform:uppercase}
+
+  .films{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:2px}
+  .films>div{border-top:1px solid rgba(255,255,255,.14);padding-top:7px}
+  .films b{display:block;font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:-.02em}
+  .films span{display:block;font-family:'JetBrains Mono',monospace;font-size:6px;letter-spacing:.1em;
+    text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:3px}
+
+  /* footer */
+  .foot{position:static;margin-top:0;display:flex;justify-content:space-between;align-items:flex-end;
+    border-top:1px solid rgba(255,255,255,.14);padding-top:10px;margin-top:22px}
+  .foot .l{font-size:8.6px;color:rgba(255,255,255,.6);line-height:1.5}
+  .foot .l b{color:#fff;font-weight:600}
+  .foot .r{font-family:'JetBrains Mono',monospace;font-size:6.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.4);text-align:right;line-height:1.7}
+
+  /* fill pass */
+  h1{font-size:82px}
+  h1 span{font-size:1.04em}
+  .lede{font-size:11.4px;line-height:1.62;max-width:340px}
+  .meta b{font-size:12.6px}
+  .band b{font-size:26px}
+  .band span{font-size:7px}
+  h2{font-size:15.5px;padding-top:11px;margin-bottom:11px}
+  p.body{font-size:10.1px;line-height:1.66}
+  li{font-size:9.3px;padding:7.5px 0}
+  .films b{font-size:17px}
+  .ccm h3{font-size:13.5px}
+  .ccm p{font-size:8.6px}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+  .pillars>div{border-top:1px solid rgba(255,255,255,.14);padding-top:11px}
+  .pillars .n{font-family:'JetBrains Mono',monospace;font-size:6.8px;letter-spacing:.16em;color:#5f8bff}
+  .pillars h3{font-size:11px;font-weight:700;margin:7px 0 5px;letter-spacing:-.012em}
+  .pillars p{font-size:8.3px;line-height:1.55;color:rgba(255,255,255,.6)}
+/*ZOOM*/
+.sheet{zoom:0.87}
+  ul.asks{margin-top:2px}
+  ul.asks li{grid-template-columns:26px 1fr;font-size:9.1px;padding:6px 0}
+  ul.asks li .y{color:#5f8bff}
+  ul.asks li b{color:#fff;font-weight:600}
+.in{zoom:1;transform-origin:top left}
+</style>
+<style>
+html,body{height:auto!important;width:794px!important}
+body{overflow:visible!important}
+.sheet{height:auto!important;overflow:visible!important;padding-bottom:40px!important}
+.in{zoom:1!important}
+</style></head>
+<body>
+<div class="sheet">
+<div class="in">
+
+  <div class="bar">
+    <div class="badge">5</div>
+    <div>
+      <b>LODAM LEE</b>
+      <div class="sub">Kwangwoon MS · No.5 · Left shot</div>
+    </div>
+    <div class="right">Player file · 2026</div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="eye"><i></i>Player file · 2026</div>
+      <h1>LODAM<span>Lee</span></h1>
+      <p class="lede">A 2013-born, left-shot forward from Seoul who plays <b>center, wing and the point</b> — seventeen international entries in nine countries, every one of them on film. Built for AAA and Tier 1 tryouts, select-team invitations and long-term partnership.</p>
+      <div class="cta">For coaches · select teams · partners</div>
+    </div>
+    <div class="ccm">
+      <div class="top"><span>Premier Bantam camp</span><b>2027</b></div>
+      <img class="mark" src="icons/ccm68.png" alt="CCM 68 Combine">
+      <h3>Selected for the CCM 68 Combine</h3>
+      <p>One of 136 players chosen across the U.S. and Canada for the 2013 birth year. Chicago, August 4–8, 2027.</p>
+      <div class="nums">
+        <div><b>68</b><span>Combine</span></div>
+        <div><b>136</b><span>Selected</span></div>
+        <div><b>2013</b><span>Birth year</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta">
+    <div><span>No.</span><b>5</b></div>
+    <div><span>Born</span><b>2013</b></div>
+    <div><span>Shoots</span><b>Left</b></div>
+    <div><span>Position</span><b>C · W · D</b></div>
+    <div><span>Club</span><b>Kwangwoon MS</b></div>
+  </div>
+
+  <div class="band">
+    <div><b>17</b><span>Intl events</span></div>
+    <div><b>9</b><span>Countries</span></div>
+    <div><b>81</b><span>Films</span></div>
+    <div><b>3</b><span>Continents</span></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h2>Why he is worth a roster spot <span class="mono">For coaches &amp; scouts</span></h2>
+      <p class="body">Most young forwards arrive as one thing: a center or a winger. Lodam arrives as three. A coach can move him from the middle to the wall to the point <b>without changing the lines</b> — and dress fewer specialists without losing a role.</p>
+      <p class="body">Seventeen international entries since 2022, for clubs and select teams from Minsk to Bangkok. He has already answered the question every overseas prospect gets: how does he handle unfamiliar systems, unfamiliar ice and unfamiliar linemates.</p>
+
+      <h2 style="margin-top:13px">Finals on the record <span class="mono">2022 — 2027</span></h2>
+      <ul>
+        <li><span class="y">2027</span><span><b>CCM 68 Combine</b> — Selected · Chicago <i>Bantam Major</i></span></li>
+        <li><span class="y">2026</span><span><b>Artisan Korea Cup</b> — Final · Kwangwoon MS vs Bundang MS</span></li>
+        <li><span class="y">2025</span><span><b>Gangwon Governor's Cup U12</b> — Final</span></li>
+        <li><span class="y">2025</span><span><b>Soyanggang Cup</b> — Final</span></li>
+        <li><span class="y">2025</span><span><b>106th Winter Festival</b> — Final</span></li>
+        <li><span class="y">2024</span><span><b>Soyanggang Cup</b> — Final</span></li>
+        <li><span class="y">2023</span><span><b>Gangneung Assoc. Cup</b> — Final</span></li>
+        
+        <li><span class="y">2022</span><span><b>Soyanggang Cup</b> — Final</span></li>
+        
+      </ul>
+    </div>
+
+    <div>
+      <h2>Career <span class="mono">Since 2019</span></h2>
+      <ul>
+        <li><span class="y">2026—</span><span><b>Kwangwoon Middle School</b> · Seoul <i>U15</i></span></li>
+        <li><span class="y">2024—26</span><span><b>Chuncheon Tigers / Gangwon Bears</b></span></li>
+        <li><span class="y">2023</span><span><b>High1 Futures</b> · Chuncheon Tigers</span></li>
+        <li><span class="y">2020—23</span><span><b>Chuncheon Little High1</b></span></li>
+        <li><span class="y">2019</span><span><b>Junior Mavericks</b> · Kansas City, USA</span></li>
+      </ul>
+
+      <h2 style="margin-top:13px">International <span class="mono">2024 — 2026</span></h2>
+      <p class="body">Belarus, China, Slovenia, Malaysia, Thailand, Hong Kong, Italy, Finland, the Czech Republic and Korea — <b>17 entries in three seasons</b>. Invited onto CCM Selects, Vanbridge, Greater Bay, SWOT and Bangkok Warriors rosters, each time joining a new room and a new system mid-season.</p>
+
+      <h2 style="margin-top:13px">Film <span class="mono">81 videos</span></h2>
+      <div class="films">
+        <div><b>19</b><span>Own goals</span></div>
+        <div><b>17</b><span>KIHA events</span></div>
+        <div><b>28</b><span>Club games</span></div>
+        <div><b>17</b><span>Intl events</span></div>
+      </div>
+
+      <h2 style="margin-top:13px">Next step <span class="mono">Let's talk</span></h2>
+      <ul class="asks">
+        <li><span class="y">01</span><span><b>Coaches &amp; scouts</b> — full film, coach references and academic record, on request.</span></li>
+        <li><span class="y">02</span><span><b>Select teams &amp; tournaments</b> — 2027 availability, camp and tournament windows.</span></li>
+        <li><span class="y">03</span><span><b>Sponsors &amp; partners</b> — a named partnership for the 2027 North American season.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <div><div class="n">01 · Coaches &amp; scouts</div><h3>Three positions, one lineup slot.</h3><p>Center, wing or the point, without changing the lines. Fewer specialists dressed, more matchups covered.</p></div>
+    <div><div class="n">02 · Select teams</div><h3>He has been the invitee before.</h3><p>Seventeen international entries since 2022 — new systems, new ice, new linemates, and a player who settles fast.</p></div>
+    <div><div class="n">03 · Partners</div><h3>A Korean pathway north.</h3><p>Seven seasons and 81 filmed games behind him. The next stage is a North American season — travel, training, equipment.</p></div>
+  </div>
+
+  <div class="foot">
+    <div class="l"><b>Full film archive, coach references and academic record</b> on request.<br>Prepared for coaches, select-team directors and partners — references from Korea, Hong Kong and North America.</div>
+    <div class="r">Player file · 2026<br>Lodam Lee · No.5</div>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
